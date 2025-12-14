@@ -1,4 +1,4 @@
-import React from 'react'
+ 
 import './Footer.css'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/Untitled_design__14_-removebg-preview.png'
@@ -17,7 +17,6 @@ export default function Footer() {
                                 <a href="mailto:info@transgateacd.online" className='text-decoration-none  text-white'>info@transgateacd.online</a>
                                 <p><a href="tel:+20 01098396598" className='text-decoration-none  text-white'>+20 01098396598</a></p>
                                 <div className="icons">
-                                    <i></i>
                                     <i></i>
                                 </div>
                             </address>
