@@ -1,9 +1,13 @@
-import { createContext, useState } from "react";
+import { createContext, useState , ReactNode} from "react";
 
-export const LanguageContext=createContext(null);
+type LanguageContextType = {
+  language: string;
+  setLanguage: React.Dispatch<React.SetStateAction<string>>;
+};
+export const LanguageContext=createContext<LanguageContextType | null>(null);
 
-export default function LanguageProvider({children}){
-    const [language,setLanguage]=useState("en");
+export default function LanguageProvider({children}:{children:ReactNode}){
+    const [language,setLanguage]=useState<string>("en");
 
     const value={
         language,setLanguage

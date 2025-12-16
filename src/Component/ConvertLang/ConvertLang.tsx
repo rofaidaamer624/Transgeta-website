@@ -2,7 +2,7 @@ import ReactCountryFlag from "react-country-flag";
 import { FaArrowsAltH } from "react-icons/fa";
 
 
-export default function ConvertLang({fromLang,toLang}) {
+export default function ConvertLang({fromLang,toLang}: { fromLang: string; toLang: string }) {
   return (
     <>
     <div className="card">

@@ -12,7 +12,7 @@ export default function NavBar() {
   const [nextLang,setNextLang]=useState("العربية");
 
 
-  const changeLang = (selectedLang) => {
+  const changeLang = (selectedLang:string) => {
     if(selectedLang==="en")
       setNextLang("العربية")
     else
