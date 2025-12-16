@@ -2,8 +2,26 @@
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/cropped-WhatsApp_Image_2025-11-12_at_17-06-08_0162802e-remov (1).png'
-
+import { useTranslation } from 'react-i18next' 
+import { useContext, useState } from 'react';
+import LanguageProvider, { LanguageContext } from '../../Context/LanguageContext';
 export default function NavBar() {
+  const {t}=useTranslation();
+  const { i18n } = useTranslation();
+  const {language,setLanguage}=useContext(LanguageContext);
+  const [nextLang,setNextLang]=useState("العربية");
+
+
+  const changeLang = (selectedLang) => {
+    if(selectedLang==="en")
+      setNextLang("العربية")
+    else
+      setNextLang("english")
+    i18n.changeLanguage(selectedLang);
+    setLanguage(selectedLang)
+    document.documentElement.dir = selectedLang === "ar" ? "rtl" : "ltr";
+  };
+
   return (
     <>
       <Navbar className="bg-white">
@@ -22,44 +40,34 @@ export default function NavBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto gap-3">
-              <Nav.Link>
                 <Link to="/" className='fw-medium text-decoration-none'>
-                  Home
+                  {t("nav.home")}
                 </Link>
-              </Nav.Link>
-              <Nav.Link >
                 <Link className='fw-medium text-decoration-none' to='/service' >
-                  Our Services
+                  {t("nav.Services")}
                 </Link>
-              </Nav.Link>
-              <Nav.Link>
+
                 <Link className='fw-medium text-decoration-none' to='/about'>
-                  About Us
+                    {t("nav.About")}
                 </Link>
-              </Nav.Link>
-              <Nav.Link>
+
                 <Link className='fw-medium text-decoration-none' to='/resources'>
-                  Insights & Resources
+                    {t("nav.Resources")}
                 </Link>
-              </Nav.Link>
-              <Nav.Link>
                 <Link className='fw-medium text-decoration-none' to='/ethics'>
-                  Ethical Standards
+                                    {t("nav.Ethics")}
                 </Link>
-              </Nav.Link>
-              <Nav.Link>
-                <Link className='fw-medium text-decoration-none' to='/contact'>
-                Contact us 
+                <Link className='fw-medium text-decoration-none' to='/contact' >
+                    {t("nav.Contact")}
                 </Link>
-              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
           <div className="buttons d-flex gap-3">
             <button className='btn btn-primary text-white'>
               Pricing Request
               </button>
-              <button className='btn btn-outline-primary'> 
-                العربية
+              <button className='btn btn-outline-primary' onClick={()=>changeLang(nextLang==='english'?"en":"ar")}> 
+                {nextLang}
               </button>
           </div>
         </Container>

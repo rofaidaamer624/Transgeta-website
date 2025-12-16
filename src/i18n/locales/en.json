@@ -1,0 +1,13 @@
+{
+  "welcome": "Welcome",
+  "login": "Login",
+  "logout": "Logout",
+  "nav":{
+    "home":"home",
+    "Services":"Our Services",
+    "About":"About Us",
+    "Resources":"Insights & Resources",
+    "Ethics":"Ethical Standards",
+    "Contact":"Contact Us"
+  }
+}

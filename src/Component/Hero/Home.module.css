@@ -1,0 +1,9 @@
+.hero-bg{
+    min-height: 100vh;
+    padding-top:35%;
+background: url(../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/hero-bg.jpg) left top/90% 100vh no-repeat;
+}
+
+.heroColor{
+    background-color: #1b90c6;
+}
