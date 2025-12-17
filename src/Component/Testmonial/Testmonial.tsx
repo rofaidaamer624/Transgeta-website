@@ -15,7 +15,7 @@ export default function Testmonial() {
             <div className="container">
                 <div className="row">
                     <h2 className='fw-bolder my-5 display-5 text-center'>Our Customer's Positive Comments</h2>
-                    <div className="col-md-11 col-11 bg-primary rounded-3 mx-auto">
+                    <div className=" col-12 bg-colored rounded-3 mx-auto">
                         <div className="row py-5 justify-content-start px-4">
                             <div className={`${styles.quoteContainer} col-md-4`}>
                                 <div className="iconContainer rounded-circle border border-5 border-black w-auto d-inline-flex me-auto p-2 h-auto bg-white">
@@ -26,9 +26,9 @@ export default function Testmonial() {
                                 </div>
                             </div>
                             <div className="col-md-8">
-                                <Carousel activeIndex={index} onSelect={handleSelect} className='d-flex align-items-stretch'>
+                                <Carousel activeIndex={index} onSelect={handleSelect} indicators={false} controls={false}>
                                     <Carousel.Item className='h-100'>
-                                        <figure className="card bg-transparent">
+                                        <figure className="card bg-transparent border-0">
                                             <div className="card-body">
 
                                                 <blockquote className="card-text text-white">
@@ -39,14 +39,15 @@ export default function Testmonial() {
                                                         </p>
                                                 </blockquote>
 
-                                                <div className="imgContainer text-end">
-                                                    <img
+                                                    <div className="iconContainer w-25 ms-auto">
+                                                   <img
                                                         src={quoteEndIcon}
-                                                        className="img-thumbnail w-25 bg-transparent border-0"
+                                                        className="img-thumbnail w-50 bg-transparent border-0"
                                                         alt=""
                                                         aria-hidden="true"
                                                     />
-                                                </div>
+                                                    </div>
+
 
                                                 <figcaption className="text-white">
                                                     <strong className='fs-5 fw-bold'>Sara Hany</strong><br />
@@ -57,7 +58,7 @@ export default function Testmonial() {
                                         </figure>
                                     </Carousel.Item>
                                     <Carousel.Item className='h-100'>
-                                        <figure className="card bg-transparent ">
+                                        <figure className="card bg-transparent border-0 ">
                                             <div className="card-body">
 
                                                 <blockquote className="card-text text-white">
@@ -71,14 +72,14 @@ export default function Testmonial() {
                                                     </p>
                                                 </blockquote>
 
-                                                <div className="imgContainer text-end">
-                                                    <img
+                                                    <div className="iconContainer w-25 ms-auto">
+                                                   <img
                                                         src={quoteEndIcon}
-                                                        className="img-thumbnail w-25 bg-transparent border-0"
+                                                        className="img-thumbnail w-50 bg-transparent border-0"
                                                         alt=""
                                                         aria-hidden="true"
                                                     />
-                                                </div>
+                                                    </div>
 
                                                 <figcaption className="text-white">
                                                     <strong className='fs-5 fw-bold'>Sara Hany</strong><br />
@@ -89,7 +90,7 @@ export default function Testmonial() {
                                         </figure>
                                     </Carousel.Item>
                                     <Carousel.Item className='h-100'>
-                                        <figure className="card bg-transparent ">
+                                        <figure className="card bg-transparent border-0 ">
                                             <div className="card-body">
 
                                                 <blockquote className="card-text text-white">
@@ -103,14 +104,14 @@ export default function Testmonial() {
                                                     </p>
                                                 </blockquote>
 
-                                                <div className="imgContainer text-end">
-                                                    <img
-                                                        src={quoteIcon}
-                                                        className="img-thumbnail w-25 bg-transparent border-0"
+                                                    <div className="iconContainer w-25 ms-auto">
+                                                   <img
+                                                        src={quoteEndIcon}
+                                                        className="img-thumbnail w-50 bg-transparent border-0"
                                                         alt=""
                                                         aria-hidden="true"
                                                     />
-                                                </div>
+                                                    </div>
 
                                                 <figcaption className="text-white">
                                                     <strong className='fs-5 fw-bold'>Sara Hany</strong><br />

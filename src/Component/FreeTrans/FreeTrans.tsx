@@ -30,7 +30,7 @@ export default function FreeTrans() {
         <>
             <div className="freeTransContainer">
                 <Button className='rounded-pill shadow' variant="primary" onClick={handleShow}>
-                    Launch vertically centered modal
+            Check your research for free
                 </Button>
                 <Modal show={show} centered  onHide={handleClose}>
         <Modal.Header closeButton>

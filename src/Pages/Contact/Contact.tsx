@@ -1,4 +1,7 @@
 import Breadcrumb from '../../Component/Breadcrumb/Breadcrumb';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock,faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
+import { FiPhone } from 'react-icons/fi'
 export default function Contact() {
     return (
         <>
@@ -6,6 +9,44 @@ export default function Contact() {
             <div className="container">
                 <div className="row">
                     <h2>Get In Touch</h2>
+                                                <div className="icons row my-5 mb-3 pt-5">
+                                <div className="col-md-4 col-6">
+                                    <div className="d-flex gap-3 align-items-center">
+                                        <div className="d-flex text-white bg-black cricledIcon justify-content-center align-items-center">
+                                            <FontAwesomeIcon className='fs-4 bg-black rounded-circle' icon={faEnvelopeOpenText} />
+                                        </div>
+                                        <div className="contentContainer">
+                                            <h3 className='fs-5 fw-bold'>Email</h3>
+                                            <address className='mb-0'>info@transgatescd.online</address>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-4 col-6">
+                                    <div className="d-flex gap-3 align-items-center">
+                                        <div className="d-flex text-white bg-black cricledIcon justify-content-center align-items-center">
+                                            <FontAwesomeIcon className='fs-4 bg-black rounded-circle' icon={faClock} />
+                                        </div>
+                                        <div className="contentContainer">
+                                            <h3 className='fs-5 fw-bold'>Work Hours</h3>
+                                            <address className='mb-0'>Everyday 08:00 - 18:00</address>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div className="col-md-4 col-6">
+                                    <div className="d-flex gap-3 align-items-center">
+                                        <div className="d-flex text-white bg-black cricledIcon justify-content-center align-items-center">
+                                            {/* <FontAwesomeIcon className='fs-4 bg-black rounded-circle' icon={faPhone} /> */}
+                                        <FiPhone size={25}/>
+                                        </div>
+                                        <div className="contentContainer">
+                                            <h3 className='fs-5 fw-bold'>Phone</h3>
+                                            <address className='mb-0'>+20 1098396598</address>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                     <div className="col-12">
                         <div className="row justify-content-center contactDetails">
                             <div className="col-md-4 col-8"></div>

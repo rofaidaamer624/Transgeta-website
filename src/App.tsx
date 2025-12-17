@@ -3,9 +3,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MasterLayout from './Component/MasterLayout/MasterLayout';
 import Ethics from './Pages/Ethics/Ethics';
 import Home from './Pages/Home/Home';
-import Service from './Component/Services/Service';
 import Services from './Pages/Services/Services';
 import Contact from './Pages/Contact/Contact';
+import Resources from './Pages/Resources/Resources';
+import About from './Pages/About/About';
 
 function App() {
   const routes=createBrowserRouter([{
@@ -15,8 +16,9 @@ function App() {
     children:[
       {index:true,element:<Home/>},
       {path:"/ethics",element:<Ethics/>},
+      {path:"/resources",element:<Resources/>},
+      {path:"/about",element:<About/>},
       {path:"/service",element:<Services/>},
-      {path:"/service",element:<Service/>},
       {path:"/contact",element:<Contact/>}
     ]
 }],

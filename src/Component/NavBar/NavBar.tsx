@@ -30,7 +30,7 @@ export default function NavBar() {
 
   return (
     <>
-      <Navbar className="bg-white">
+      <Navbar expand="lg" className="bg-white">
         <Container fluid>
           <Navbar.Brand>
             <Link to='/'>

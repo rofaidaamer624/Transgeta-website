@@ -20,3 +20,25 @@
     height: 48px;
     border-radius: 50%;
 }
+
+@media screen and (width>768px) {
+    nav a{
+    position: relative;
+    color: #1b90c6;
+}
+nav a::after{
+    position: absolute;
+    left: 0%;
+    bottom: -5px;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: #1b90c6;
+    /* transform: translateX(-50%); */
+    transition: all 0.3s;
+}
+
+nav a:hover::after{
+    width: 100%;
+}
+}
