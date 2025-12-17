@@ -28,7 +28,7 @@ export default function Testmonial() {
                             <div className="col-md-8">
                                 <Carousel activeIndex={index} onSelect={handleSelect} indicators={false} controls={false}>
                                     <Carousel.Item className='h-100'>
-                                        <figure className="card bg-transparent border-0">
+                                        <figure className="card bg-transparent border-0 h-100">
                                             <div className="card-body">
 
                                                 <blockquote className="card-text text-white">
@@ -58,7 +58,7 @@ export default function Testmonial() {
                                         </figure>
                                     </Carousel.Item>
                                     <Carousel.Item className='h-100'>
-                                        <figure className="card bg-transparent border-0 ">
+                                        <figure className="card bg-transparent border-0 h-100 ">
                                             <div className="card-body">
 
                                                 <blockquote className="card-text text-white">
@@ -90,7 +90,7 @@ export default function Testmonial() {
                                         </figure>
                                     </Carousel.Item>
                                     <Carousel.Item className='h-100'>
-                                        <figure className="card bg-transparent border-0 ">
+                                        <figure className="card bg-transparent border-0 h-100 ">
                                             <div className="card-body">
 
                                                 <blockquote className="card-text text-white">

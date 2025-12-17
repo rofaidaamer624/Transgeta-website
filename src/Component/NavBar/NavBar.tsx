@@ -3,7 +3,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/cropped-WhatsApp_Image_2025-11-12_at_17-06-08_0162802e-remov (1).png'
 import { useTranslation } from 'react-i18next'
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { LanguageContext } from '../../Context/LanguageContext';
 export default function NavBar() {
   const { t } = useTranslation();
@@ -14,9 +14,11 @@ export default function NavBar() {
     throw new Error("LanguageContext must be used within LanguageProvider");
   }
 
-  const { setLanguage } = context;
-  const [nextLang, setNextLang] = useState("العربية");
-
+  const { language,setLanguage } = context;
+  const [nextLang, setNextLang] = useState("");
+  useEffect(()=>{
+    language==='ar'?setNextLang("english"):setNextLang("العربية")
+  },[language])
 
   const changeLang = (selectedLang: string) => {
     if (selectedLang === "en")
@@ -67,8 +69,7 @@ export default function NavBar() {
                 {t("nav.Contact")}
               </Link>
             </Nav>
-          </Navbar.Collapse>
-          <div className="buttons d-flex gap-3">
+                      <div className="buttons d-flex gap-3 my-3 my-md-0">
             <button className='btn btn-primary text-white'>
               Pricing Request
             </button>
@@ -76,6 +77,7 @@ export default function NavBar() {
               {nextLang}
             </button>
           </div>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </>

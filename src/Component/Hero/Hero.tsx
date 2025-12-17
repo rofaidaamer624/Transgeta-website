@@ -58,7 +58,7 @@ export default function Hero() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-6 col-12 px-0 px-md-4 ">
+                        <div className="col-md-6 col-12 px-0 ps-md-4 ">
                             <div className={`card p- pb-3 ${styles['heroColor']} border-0 rounded-0 rounded-start-3 `}>
                                 <img
                                     src={logo}

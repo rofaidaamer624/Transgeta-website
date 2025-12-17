@@ -1,17 +1,21 @@
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import card1Img from '../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/card1.jpg'
 import card2Img from '../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/card2.jpg'
 import card3Img from '../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/card3.jpg'
 import { motion, useInView } from 'framer-motion'
+import { LanguageContext } from '../../Context/LanguageContext';
 
 export default function Accuracy() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
+    const {language}=useContext(LanguageContext);
+    console.log(language);
+    
     return (
         <>
             <motion.div
                 ref={ref}
-                initial={{ x: -200, opacity: 0 }}
+                initial={{ x: language==="en" ? -200 : 200, opacity: 0 }}
                 animate={isInView ? { x: 0, opacity: 1 } : {}}
                 transition={{ type: "spring", stiffness: 100, damping: 20, duration: 1 }}
             >
@@ -27,7 +31,7 @@ export default function Accuracy() {
                                     Translation is not just converting words  it’s the precise transfer of meaning, context, and intent. That’s why we provide you with accurate, high-quality translations delivered by certified language experts.
                                 </p>
                             </div>
-                            <div className="row my-4">
+                            <div className="row my-4 gy-4">
                                 <div className="col-lg-4 col-md-6 col-12">
                                     <div className="card px-4 pt-4">
                                         <div className="imgContainer position-relative">
