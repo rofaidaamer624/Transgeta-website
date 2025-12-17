@@ -1,7 +1,12 @@
 import { faCalendar } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+type BlogCardProps = {
+  blogDate: string;
+  blogName: string;
+  blogDesc: string;
+};
 
-export default function BlogCrad({blogDate,blogName,blogDesc}) {
+export default function BlogCrad({blogDate,blogName,blogDesc}:BlogCardProps) {
     return (
         <>
             <div className="card p-3 border-0 shadow rounded-0">

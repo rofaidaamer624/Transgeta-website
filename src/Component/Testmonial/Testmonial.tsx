@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import quoteIcon from '../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/image (4).svg'
 import styles from './Testmonial.module.css'
 import quoteEndIcon from '../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/image (5).svg' 
 import { Carousel } from 'react-bootstrap';
