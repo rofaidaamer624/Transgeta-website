@@ -11,7 +11,12 @@
 @media screen and (width<768px) {
     .hero-bg {
         min-height: 100dvh;
-        background: url(../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/hero-bg.jpg) left top/cover no-repeat;
+         background: linear-gradient(          rgba(50, 50, 50, 0.7), 
+    rgba(50, 50, 50, 0.7)), url(../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/hero-bg.jpg) left top/cover no-repeat;
     }
-
+.hero-icon{    
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+}
 }

@@ -31,8 +31,8 @@ export default function Hero() {
                                         <div className="col-md-6 col-12 align-self-end ps-md-5 mx-auto">
                                             <div className="row ">
                                                 <div className="col-6 d-flex">
-                                                    <FaHandshake className='bg-black txt-colored rounded-circle px-2 mx-3'
-                                                        style={{ "width": "70px", "height": "70px" }}
+                                                    <FaHandshake className='bg-black hero-icon txt-colored rounded-circle px-2 mx-3'
+                                                        
                                                     />
                                                     <div className="content d-fles flex-column text-center">
                                                         <CountUp
@@ -50,8 +50,8 @@ export default function Hero() {
                                                     </div>
                                                 </div>
                                                 <div className="col-6 d-flex">
-                                                    <GrCertificate color='white' className='bg-colored text-white rounded-circle px-2 mx-3'
-                                                        style={{ "width": "70px", "height": "70px" }}
+                                                    <GrCertificate color='white' className='bg-colored hero-icon text-white rounded-circle px-2 mx-3'
+                                                        
                                                     />
                                                     <div className="content d-fles flex-column text-center">
                                                         <CountUp
