@@ -13,7 +13,7 @@ export default function Mission() {
             <h2 className='fw-bolder my-5 display-5 text-center'>Our Mission</h2>
 
             <h3 className='fs-6 fw-light'>Our mission is to deliver accurate, professional, and dependable translation services that preserve the true meaning of every document.</h3>
-            <div className="row my-5">
+            <div className="row my-5 gy-5 justify-content-center justify-content-md-start mx-auto">
               <div className="col-lg-3 col-md-6 col-12">
                 <div className="card h-100 align-items-center py-3 missionCard">
                   <div className="icon-wrapper bg-colored rounded-circle w-auto">

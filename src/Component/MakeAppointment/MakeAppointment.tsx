@@ -18,8 +18,8 @@ export default function MakeAppointment() {
                                 Experience seamless access to Trans-Gate's translation and academic consultation services. Our streamlined process allows you to submit your documents, request consultations, and receive expert support quickly and efficiently, saving you time while ensuring high-quality results.
                             </p>
                             <p>From graduation certificates and legal contracts to theses, dissertations, and medical reports—TransGate is your trusted partner for all translation needs.</p>
-                            <div className="icons row my-5 mb-3 pt-5">
-                                <div className="col-md-4 col-6">
+                            <div className="icons row my-5 mb-3 pt-5 justify-content-md-start justify-content-center gy-5">
+                                <div className="col-md-4 col-10">
                                     <div className="d-flex gap-3 align-items-center">
                                         <div className="d-flex text-white bg-black cricledIcon justify-content-center align-items-center">
                                             <FontAwesomeIcon className='fs-4 bg-black rounded-circle' icon={faEnvelopeOpenText} />
@@ -30,7 +30,7 @@ export default function MakeAppointment() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-md-4 col-6">
+                                <div className="col-md-4 col-10">
                                     <div className="d-flex gap-3 align-items-center">
                                         <div className="d-flex text-white bg-black cricledIcon justify-content-center align-items-center">
                                             <FontAwesomeIcon className='fs-4 bg-black rounded-circle' icon={faClock} />
@@ -42,7 +42,7 @@ export default function MakeAppointment() {
                                     </div>
 
                                 </div>
-                                <div className="col-md-4 col-6">
+                                <div className="col-md-4 col-10">
                                     <div className="d-flex gap-3 align-items-center">
                                         <div className="d-flex text-white bg-black cricledIcon justify-content-center align-items-center">
                                             {/* <FontAwesomeIcon className='fs-4 bg-black rounded-circle' icon={faPhone} /> */}
