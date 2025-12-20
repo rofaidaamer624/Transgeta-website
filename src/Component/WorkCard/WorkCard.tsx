@@ -9,8 +9,8 @@ export default function WorkCard({img,desc,title}:CardData) {
         <>
             <div className="card mb-3 shadow">
                 <div className="row g-0">
-                    <div className="col-md-4">
-                        <img src={img} className="img-fluid rounded-start" alt="..." />
+                    <div className="col-md-4 d-flex align-items-center justify-content-center">
+                        <img src={img} className=" img-fluid rounded-start " alt="..." />
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">

@@ -39,25 +39,25 @@ breakpoints={{
 
     <SwiperSlide
     >
-      <img src='/images/workCardImg7.png' alt="brand" className="brand-img border border-light-subtle border-1 rounded-2"/>
+      <img src='/images/workCardImg7.png' alt="brand" className="brand-img shadow-lg border-secondary-subtle border-opacity-75 border border-1 border-1 rounded-2"/>
     </SwiperSlide>
     <SwiperSlide>
-      <img src='/images/workCardImg6.png' alt="brand" className="brand-img border border-light-subtle border-1 rounded-2" />
+      <img src='/images/workCardImg6.png' alt="brand" className="brand-img shadow-lg border-secondary-subtle border-opacity-75 border border-1 border-1 rounded-2" />
     </SwiperSlide>
         <SwiperSlide>
-      <img src='/images/workCardImg5.png' alt="brand" className="brand-img border border-light-subtle border-1 rounded-2" />
+      <img src='/images/workCardImg5.png' alt="brand" className="brand-img shadow-lg border-secondary-subtle border-opacity-75 border border-1 border-1 rounded-2" />
     </SwiperSlide>
         <SwiperSlide>
-      <img src='/images/workCardImg4.png' alt="brand" className="brand-img border border-light-subtle border-1 rounded-2" />
+      <img src='/images/workCardImg4.png' alt="brand" className="brand-img shadow-lg border-secondary-subtle border-opacity-75 border border-1 border-1 rounded-2" />
     </SwiperSlide>
         <SwiperSlide>
-      <img src='/images/workCardImg3.png' alt="brand" className="brand-img border border-light-subtle border-1 rounded-2" />
+      <img src='/images/workCardImg3.png' alt="brand" className="brand-img shadow-lg border-secondary-subtle border-opacity-75 border border-1 border-1 rounded-2" />
     </SwiperSlide>
             <SwiperSlide>
-      <img src='/images/workCardImg2.png' alt="brand" className="brand-img border border-light-subtle border-1 rounded-2" />
+      <img src='/images/workCardImg2.png' alt="brand" className="brand-img shadow-lg border-secondary-subtle border-opacity-75 border border-1 border-1 rounded-2" />
     </SwiperSlide>
                 <SwiperSlide>
-      <img src='/images/workCardImg1.png' alt="brand" className="brand-img border border-light-subtle border-1 rounded-2" />
+      <img src='/images/workCardImg1.png' alt="brand" className="brand-img shadow-lg border-secondary-subtle border-opacity-75 border border-1 border-1 rounded-2" />
     </SwiperSlide>
 </Swiper>
 

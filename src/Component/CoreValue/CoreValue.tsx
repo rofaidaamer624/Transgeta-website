@@ -1,91 +1,49 @@
-// Example icons — replace with your own (e.g., from react-icons, @mui/icons, or SVGs)
-const icons = [
-  "🔥", // icon1
-  "🧠", // icon2
-  "🤝", // icon3
-  "🚀", // icon4
-  "🎯", // icon5
-  "💡"  // icon6
-];
+import CoreValueCard from "../CoreValueCard/CoreValueCard";
 
-const values = [
-  "Passion",
-  "Innovation",
-  "Collaboration",
-  "Growth",
-  "Focus",
-  "Integrity"
-];
 
-export default function CoreValue() {
-
-return (   
-   <>
-      <style>{`
-        .core-diagram {
-          position: relative;
-          width: 500px;
-          height: 500px;
-          margin: auto;
-        }
-
-        .center {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 120px;
-          height: 120px;
-          border-radius: 50%;
-          background: #0d6efd;
-          color: #fff;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 18px;
-          font-weight: bold;
-          text-align: center;
-          box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
-
-        .value-item {
-          position: absolute;
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-          background: #fff;
-          border: 4px solid #0d6efd;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          font-size: 14px;
-          font-weight: 500;
-          box-shadow: 0 0 8px rgba(0,0,0,0.1);
-        }
-
-        /* place items in circular layout */
-        .item0 { top: 5%; left: 50%; transform: translate(-50%, 0); }
-        .item1 { top: 20%; left: 85%; transform: translate(-50%, -50%); }
-        .item2 { top: 55%; left: 95%; transform: translate(-50%, -50%); }
-        .item3 { top: 80%; left: 55%; transform: translate(-50%, -50%); }
-        .item4 { top: 80%; left: 20%; transform: translate(-50%, -50%); }
-        .item5 { top: 40%; left: 5%; transform: translate(-50%, -50%); }
-
-      `}</style>
-
-      <div className="core-diagram">
-        <div className="center">Core Value</div>
-
-        {values.map((val, i) => (
-          <div key={i} className={`value-item item${i}`}>
-            <div style={{ fontSize: "28px" }}>{icons[i]}</div>
-            <div>{val}</div>
+export default function FlipCard() {
+  return (
+    <>
+      <section id="coreValue">
+        <div className="container" >
+          <div className="row g-3"> {/* g-3 adds a small consistent gap between all cards */}
+            <h2 className='fw-bolder my-5 display-5 text-center'>Core Values</h2>
+            {/* <h3>The pillars of our commitment to excellence</h3> */}
+            <div className="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+              <CoreValueCard title={`Accuracy`} desc={`We prioritize precision in every translation, ensuring your ideas are
+conveyed clearly and faithfully.`} />
+            </div>
+            <div className="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+              <CoreValueCard title={`Academic Excellence`} desc={`We support research and learning by providing expert guidance that
+strengthens structure, clarity, and impact.`} />
+            </div>
+            <div className="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+              <CoreValueCard title={`Integrity`} desc={`We maintain honesty and transparency in all our services, respecting
+confidentiality and ethical standards.`} />
+            </div>
+            <div className="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+              <CoreValueCard title={`Professionalism`} desc={`We deliver every project with dedication, reliability, and meticulous
+attention to detail.`} />
+            </div>
+            <div className="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+              <CoreValueCard title={`Continuous Growth`} desc={`We invest in ongoing learning, staying updated in language, academic
+standards, and research trends.`} />
+            </div>
+            <div className="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+              <CoreValueCard title={`Clarity`} desc={`We simplify complex ideas, making your message understandable and
+meaningful to your audience.`} />
+            </div>
+            <div className="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+              <CoreValueCard title={`Supportive Collaboration`} desc={`We work closely with clients,providing guidance,feedback, and personalized solutions`} />
+            </div>
+            <div className="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+              <CoreValueCard title={`Excellence in Communication`} desc={`We value clear, concise, and Impactful expression in every project, written or consulted`} />
+            </div>
           </div>
-        ))}
-      </div>
-    </>
-  );
-};
+        </div>
+      </section>
 
+    </>
+
+  );
+}

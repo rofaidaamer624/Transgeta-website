@@ -1,10 +1,13 @@
 import Breadcrumb from "../../Component/Breadcrumb/Breadcrumb"
 import styles from './About.module.css'
 import { MdVerifiedUser } from "react-icons/md";
-import { AiFillClockCircle,AiOutlineCheckCircle } from "react-icons/ai";
+import { AiFillClockCircle, AiOutlineCheckCircle } from "react-icons/ai";
 import { HiAcademicCap } from "react-icons/hi2";
 import Achievement from "../../Component/Achievement/Achievement";
 import CoreValue from "../../Component/CoreValue/CoreValue";
+import Mission from "../../Component/Mission/Mission";
+import Vision from "../../Component/Vision/Vision";
+import AnimatedProgressBar from "../../Component/ProgressBar/ProgressBar";
 
 
 
@@ -15,8 +18,8 @@ export default function About() {
       <section className="my-5">
         <div className="container">
           <div className="row justify-content-center">
-            <div className={`${styles.aboutBg} col-lg-4 col-md-12 justify-content-end d-flex p-0 h-75 align-self-center`}>
-              <img src="images/aboutImg.jpg" className="w-75 align-self-end border border-white border-5 me-3 " alt="" />
+            <div className={`${styles.aboutBg} col-lg-4 col-md-12 d-lg-flex d-none justify-content-end mx-3  `}>
+              <img src="images/aboutImg.jpg" className="w-75 align-self-end border border-white border-5 me-3 justif " alt="" />
             </div>
             <div className="col-lg-6 col-sm-8 col-12 text-center ">
               <img src="/images/logo.png" className="w-25" alt="" />
@@ -36,12 +39,12 @@ export default function About() {
                 with a commitment to inspiration and clarity, ensuring each client receives
                 guidance and service that elevates their work and strengthens their academic
                 journey.</p> */}
-              <div className="row align-items-stretch gy-3">
+              <div className="row align-items-stretch gy-3 my-3">
                 <div className="col-md-6 col-12 ">
                   <div className="card mb-3 h-100 d-flex flex-column justify-content-center">
                     <div className="row g-0">
                       <div className="col-md-4 d-flex justify-content-center align-items-center ">
-                        <AiOutlineCheckCircle size={30} className="cricledIcon text-white bg-colored" />
+                        <AiOutlineCheckCircle size={30} className="cricledIcon txt-colored bg-white" />
                       </div>
                       <div className="col-md-8">
                         <div className="card-body">
@@ -51,11 +54,11 @@ export default function About() {
                     </div>
                   </div>
                 </div>
-                                <div className="col-md-6 col-12 ">
+                <div className="col-md-6 col-12 ">
                   <div className="card mb-3 h-100 d-flex flex-column justify-content-center">
                     <div className="row g-0">
                       <div className="col-md-4 d-flex justify-content-center align-items-center ">
-<HiAcademicCap size={30} className="cricledIcon txt-colored bg-white"/>
+                        <HiAcademicCap size={30} className="cricledIcon txt-colored bg-white" />
                       </div>
                       <div className="col-md-8">
                         <div className="card-body">
@@ -65,12 +68,12 @@ export default function About() {
                     </div>
                   </div>
                 </div>
-                
-                                <div className="col-md-6 col-12 ">
+
+                <div className="col-md-6 col-12 ">
                   <div className="card mb-3 h-100 d-flex flex-column justify-content-center">
                     <div className="row g-0">
                       <div className="col-md-4 d-flex justify-content-center align-items-center ">
-                        <AiFillClockCircle className="cricledIcon txt-colored bg-white"  size={30}/>
+                        <AiFillClockCircle className="cricledIcon txt-colored bg-white" size={30} />
                       </div>
                       <div className="col-md-8">
                         <div className="card-body">
@@ -80,11 +83,11 @@ export default function About() {
                     </div>
                   </div>
                 </div>
-                                <div className="col-md-6 col-12 ">
+                <div className="col-md-6 col-12 ">
                   <div className="card mb-3 h-100 d-flex flex-column justify-content-center">
                     <div className="row g-0">
                       <div className="col-md-4 d-flex justify-content-center align-items-center ">
-                        <MdVerifiedUser size={25} className="cricledIcon txt-colored bg-white"/>
+                        <MdVerifiedUser size={25} className="cricledIcon txt-colored bg-white" />
                       </div>
                       <div className="col-md-8">
                         <div className="card-body">
@@ -94,13 +97,28 @@ export default function About() {
                     </div>
                   </div>
                 </div>
-
+              </div>
+              <div className="row align-items-stretch gy-3">
+                <div className="col-md-6 col-12 ">
+                  <AnimatedProgressBar  label="Client Satisfaction Rate" value={99} />
+                </div>
+                <div className="col-md-6 col-12 ">
+                                    <AnimatedProgressBar  label="On-Time Delivery Rate" value={100} />
+                </div>
+                <div className="col-md-6 col-12 ">
+                                    <AnimatedProgressBar  label="Cost Efficiency" value={98} />
+                </div>
+                <div className="col-md-6 col-12 ">
+                                    <AnimatedProgressBar  label="Response Time" value={100} />
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <Achievement/>
-        <CoreValue/>
+        <Achievement />
+        <CoreValue />
+        <Mission />
+        <Vision />
       </section>
     </>
   )
