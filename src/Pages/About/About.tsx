@@ -1,125 +1,117 @@
-import Breadcrumb from "../../Component/Breadcrumb/Breadcrumb"
-import styles from './About.module.css'
-import { MdVerifiedUser } from "react-icons/md";
-import { AiFillClockCircle, AiOutlineCheckCircle } from "react-icons/ai";
-import { HiAcademicCap } from "react-icons/hi2";
+import Breadcrumb from "../../Component/Breadcrumb/Breadcrumb";
+import styles from "./About.module.css";
 import Achievement from "../../Component/Achievement/Achievement";
 import CoreValue from "../../Component/CoreValue/CoreValue";
 import Mission from "../../Component/Mission/Mission";
 import Vision from "../../Component/Vision/Vision";
 import AnimatedProgressBar from "../../Component/ProgressBar/ProgressBar";
 
-
+import { FaBullseye, FaUserShield, FaClock, FaGraduationCap } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === "ar";
+
+  const coreValues = [
+    {
+      title: t("about-us.coreValues.accuracy"),
+      icon: <FaBullseye size={22} />,
+    },
+    {
+      title: t("about-us.coreValues.academicExcellence"),
+      icon: <FaGraduationCap size={22} />,
+    },
+    {
+      title: t("about-us.coreValues.deadlines"),
+      icon: <FaClock size={22} />,
+    },
+    {
+      title: t("about-us.coreValues.integrity"),
+      icon: <FaUserShield size={22} />,
+    },
+  ];
+
   return (
     <>
-      <Breadcrumb pageName={"About"} />
-      <section className="my-5">
+      <Breadcrumb pageName={t("about-us.pageName")} />
+
+      <section className={`py-5 ${styles.aboutSection}`}>
         <div className="container">
-          <div className="row justify-content-center">
-            <div className={`${styles.aboutBg} col-lg-4 col-md-12 d-lg-flex d-none justify-content-end mx-3  `}>
-              <img src="images/aboutImg.jpg" className="w-75 align-self-end border border-white border-5 me-3 justif " alt="" />
+
+          {/* Hero Header */}
+          <div className="row align-items-center g-4 mb-5">
+            <div className="col-lg-5 d-lg-block d-none">
+              <div className={`${styles.imageWrapper}`}>
+                <img src="/images/aboutImg.jpg" className="w-100" alt="about" />
+              </div>
             </div>
-            <div className="col-lg-6 col-sm-8 col-12 text-center ">
-              <img src="/images/logo.png" className="w-25" alt="" />
-              <h2 className='fw-bolder mb-3 display-5 text-start'>About Us</h2>
-              <p className="text-muted text-start "><span className="fw-bolder">Trans-Gate</span> is dedicated to bridging knowledge and empowering minds. We
-                provide professional translation services for all Documents, ensuring every word
-                is precise, clear, and impactful. Our approach goes beyond language, focusing on
-                conveying the full meaning, tone, and academic integrity of your work.
-              </p>
-              {/* <p className="text-muted text-start ">Alongside translation, we offer expert academic consultations. We guide students
-                and researchers in structuring their projects, enhancing clarity, and maximizing
-                academic impact. Our mission is to support your intellectual growth, helping you
-                communicate ideas effectively and achieve your highest potential.
-              </p>
-              <p className="text-muted text-start ">At Trans-Gate, our core values of accuracy, integrity, professionalism, and client
-                empowerment shape every project. We combine meticulous attention to detail
-                with a commitment to inspiration and clarity, ensuring each client receives
-                guidance and service that elevates their work and strengthens their academic
-                journey.</p> */}
-              <div className="row align-items-stretch gy-3 my-3">
-                <div className="col-md-6 col-12 ">
-                  <div className="card mb-3 h-100 d-flex flex-column justify-content-center">
-                    <div className="row g-0">
-                      <div className="col-md-4 d-flex justify-content-center align-items-center ">
-                        <AiOutlineCheckCircle size={30} className="cricledIcon txt-colored bg-white" />
-                      </div>
-                      <div className="col-md-8">
-                        <div className="card-body">
-                          <h5 className="card-title">Accuracy</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-6 col-12 ">
-                  <div className="card mb-3 h-100 d-flex flex-column justify-content-center">
-                    <div className="row g-0">
-                      <div className="col-md-4 d-flex justify-content-center align-items-center ">
-                        <HiAcademicCap size={30} className="cricledIcon txt-colored bg-white" />
-                      </div>
-                      <div className="col-md-8">
-                        <div className="card-body">
-                          <h5 className="card-title">Academic Excellence</h5>
-                        </div>
-                      </div>
+
+            <div className="col-lg-7">
+              <div className={`${styles.aboutCard}`}>
+                <div
+                  className={`d-flex align-items-center gap-3 flex-wrap ${
+                    isArabic ? "justify-content-end" : "justify-content-between"
+                  }`}
+                >
+                  <div className="d-flex align-items-center gap-3">
+                    <img src="/images/logo.png" className={`${styles.logo}`} alt="logo" />
+                    <div>
+                      <h2 className={`${styles.title}`}>{t("about-us.title")}</h2>
+                      <p className={`${styles.subtitle}`}>{t("about-us.subtitle")}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="col-md-6 col-12 ">
-                  <div className="card mb-3 h-100 d-flex flex-column justify-content-center">
-                    <div className="row g-0">
-                      <div className="col-md-4 d-flex justify-content-center align-items-center ">
-                        <AiFillClockCircle className="cricledIcon txt-colored bg-white" size={30} />
-                      </div>
-                      <div className="col-md-8">
-                        <div className="card-body">
-                          <h5 className="card-title">Commitment to final agreed Deadlines.</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-6 col-12 ">
-                  <div className="card mb-3 h-100 d-flex flex-column justify-content-center">
-                    <div className="row g-0">
-                      <div className="col-md-4 d-flex justify-content-center align-items-center ">
-                        <MdVerifiedUser size={25} className="cricledIcon txt-colored bg-white" />
-                      </div>
-                      <div className="col-md-8">
-                        <div className="card-body">
-                          <h5 className="card-title text-start">Integrity</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                {/* About Content */}
+                <div className={`mt-4 ${isArabic ? styles.rtl : ""}`}>
+                  <p className={styles.paragraph}>{t("about-us.paragraph1")}</p>
+                  <p className={styles.paragraph}>{t("about-us.paragraph2")}</p>
+                  <p className={styles.paragraph}>{t("about-us.paragraph3")}</p>
                 </div>
               </div>
-              <div className="row align-items-stretch gy-3">
-                <div className="col-md-6 col-12 ">
-                  <AnimatedProgressBar  label="Client Satisfaction Rate" value={99} />
+            </div>
+          </div>
+
+          {/* Core Values */}
+          <div className="row mb-5">
+            <div className="col-12">
+              <h3 className={styles.sectionTitle}>{t("about-us.coreValuesTitle")}</h3>
+            </div>
+
+            {coreValues.map((value, index) => (
+              <div className="col-lg-3 col-md-6 col-12 mb-3" key={index}>
+                <div className={styles.valueCard}>
+                  <div className={styles.valueIcon}>{value.icon}</div>
+                  <h5 className="mt-3">{value.title}</h5>
                 </div>
-                <div className="col-md-6 col-12 ">
-                                    <AnimatedProgressBar  label="On-Time Delivery Rate" value={100} />
-                </div>
-                <div className="col-md-6 col-12 ">
-                                    <AnimatedProgressBar  label="Cost Efficiency" value={98} />
-                </div>
-                <div className="col-md-6 col-12 ">
-                                    <AnimatedProgressBar  label="Response Time" value={100} />
+              </div>
+            ))}
+          </div>
+
+          {/* Metrics (تحت بعض) */}
+          <div className="row mb-5">
+            <div className="col-lg-6 col-md-10 col-12">
+              <div className={`${styles.metricsCard} ${isArabic ? styles.rtl : ""}`}>
+                <h4 className={styles.metricsTitle}>{t("about-us.metricsTitle")}</h4>
+
+                <div className="d-flex flex-column gap-3 mt-4">
+                  <AnimatedProgressBar label={t("about-us.metrics.clientSatisfaction")} value={99} />
+                  <AnimatedProgressBar label={t("about-us.metrics.onTimeDelivery")} value={100} />
+                  <AnimatedProgressBar label={t("about-us.metrics.costEfficiency")} value={98} />
+                  <AnimatedProgressBar label={t("about-us.metrics.responseTime")} value={100} />
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Existing sections */}
         <Achievement />
         <CoreValue />
         <Mission />
         <Vision />
       </section>
     </>
-  )
+  );
 }

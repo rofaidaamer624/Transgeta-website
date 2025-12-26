@@ -1,3 +1,130 @@
-.aboutBg{
-    background: url(images/aboutBgImg.jpg) no-repeat center left/80% 70%;
+.aboutSection {
+  background: #f7f9fc;
+}
+
+.aboutCard {
+  background: #fff;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.metricsCard {
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.06);
+}
+
+.metricsTitle {
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.imageWrapper {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.imageWrapper img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.logo {
+  width: 55px;
+  height: auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.subtitle {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #4b5563;
+}
+
+.sectionTitle {
+  font-weight: 800;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.valueCard {
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+  height: 100%;
+}
+
+.valueCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+}
+
+.valueIcon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e6f0ff;
+  color: #0d6efd;
+  margin: auto;
+  font-size: 22px;
+}
+
+.langSwitch {
+  background: #f3f4f6;
+  border-radius: 12px;
+  padding: 6px;
+  display: flex;
+  gap: 6px;
+}
+
+.langSwitch button {
+  border: none;
+  background: transparent;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #374151;
+  transition: 0.2s;
+}
+
+.langSwitch button:hover {
+  background: #e5e7eb;
+}
+
+.activeLang {
+  background: #0d6efd !important;
+  color: #fff !important;
+}
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.sectionHeader {
+  font-weight: 800;
+  margin-bottom: 12px;
 }

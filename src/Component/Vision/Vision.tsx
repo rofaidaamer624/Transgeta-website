@@ -1,27 +1,50 @@
-export default function Vision() {
-    return (
-        <>
-            <section id="vision" className="my-5">
-                <div className="container">
-                    <div className="row text-muted">
-                        <div className="col-lg-10 col-12">
-                            <h2 className="fw-bolder my-5 display-5">Our Vision</h2>
-                            <p>
-                                To be a <span className="fw-bold">leading gateway for knowledge</span>, where precise communication and
-                                expert guidance empower minds and elevate ideas worldwide.
-                            </p>
-                            <ul>
-                                <li>Maintain international quality standards</li>
-                                <li>Support academic and professional excellence</li>
-                                <li>Protect the integrity of official and sensitive documents</li>
-                                <li>Empower individuals by bridging language gaps with precision and reliability</li>
-                            </ul>
-                            <p>At TransGate, we envision a world where language is never a barrier—only a bridge.</p>
+import { useTranslation } from "react-i18next";
+import styles from "./Vision.module.css";
+import { FaGlobe, FaLightbulb, FaGraduationCap, FaShieldAlt } from "react-icons/fa";
 
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </>
-    )
+export default function Vision() {
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === "ar";
+
+  const visionPoints = [
+    { icon: <FaGlobe size={20} />, text: t("about-us.vision.points.p1") },
+    { icon: <FaGraduationCap size={20} />, text: t("about-us.vision.points.p2") },
+    { icon: <FaShieldAlt size={20} />, text: t("about-us.vision.points.p3") },
+    { icon: <FaLightbulb size={20} />, text: t("about-us.vision.points.p4") }
+  ];
+
+  return (
+    <section id="vision" className={`${styles.section} py-5`}>
+      <div className="container">
+        <div className={`text-center mb-5 ${isArabic ? styles.rtl : ""}`}>
+          <h2 className={styles.title}>{t("about-us.vision.title")}</h2>
+          <p className={styles.subtitle}>{t("about-us.vision.subtitle")}</p>
+        </div>
+
+        <div className="row justify-content-center">
+          <div className="col-lg-10">
+            <div className={`${styles.box} ${isArabic ? styles.rtl : ""}`}>
+              <p className={styles.paragraph}>
+                {t("about-us.vision.paragraph")}
+              </p>
+
+              <div className={styles.pointsGrid}>
+                {visionPoints.map((item, index) => (
+                  <div className={styles.pointCard} key={index}>
+                    <div className={styles.pointIcon}>{item.icon}</div>
+                    <p className={styles.pointText}>{item.text}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className={styles.footerNote}>
+                {t("about-us.vision.footer")}
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
 }

@@ -1,6 +1,159 @@
-.list-img{
-     list-style-image: url('../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/checkcircle.svg');
+.aboutSection {
+  padding: 95px 0;
+  background: #ffffff;
 }
-.about-bg{
-     background: url(/images/graduation.png) no-repeat center/contain;
+
+.dotIcon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.question {
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 18px;
+  color: #111827;
+}
+
+.answer {
+  color: #6b7280;
+  line-height: 1.8;
+  font-size: 1.02rem;
+  margin-bottom: 28px;
+}
+
+/* ✅ Image side */
+.imageSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutImage {
+  width: min(420px, 100%);
+  max-height: 520px;
+  object-fit: contain;
+  border-radius: 22px;
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.12));
+  animation: floaty 4s ease-in-out infinite;
+}
+
+/* Floating animation subtle */
+@keyframes floaty {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.valuesBox {
+  background: #f9fafb;
+  padding: 22px 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  margin-bottom: 28px;
+}
+
+.valuesTitle {
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+  color: #111827;
+}
+
+.valueText {
+  font-size: 0.98rem;
+  color: #111827;
+  line-height: 1.6;
+}
+
+/* ✅ Services paragraphs */
+.servicesText {
+  border-left: 3px solid rgba(27, 144, 198, 0.25);
+  padding-left: 18px;
+}
+
+html[dir="rtl"] .servicesText {
+  border-left: 0;
+  border-right: 3px solid rgba(27, 144, 198, 0.25);
+  padding-left: 0;
+  padding-right: 18px;
+}
+
+.serviceHeading {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.serviceDesc {
+  color: #6b7280;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ✅ Cards under text */
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.serviceCard {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  padding: 20px 22px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.serviceCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.iconBox {
+  width: 56px;
+  height: 56px;
+  background: #ffffff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+}
+
+.cardDesc {
+  margin-top: 6px;
+  margin-bottom: 0;
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 70px 0;
+  }
+
+  .question {
+    font-size: 1.4rem;
+  }
+
+  .aboutImage {
+    width: min(320px, 100%);
+  }
 }

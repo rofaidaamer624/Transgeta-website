@@ -1,51 +1,85 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-type props={
-  title:string,
-  desc:string
-}
+import type { ReactNode } from "react";
+import styles from "./CoreValues.module.css";
+import { useTranslation } from "react-i18next";
 
-export default function CoreValueCard({title,desc}:props) {
+import {
+  FaBullseye,
+  FaUserShield,
+  FaClock,
+  FaGraduationCap,
+  FaLightbulb,
+  FaChartLine,
+  FaHandsHelping,
+  FaComments,
+  FaRegSmileBeam
+} from "react-icons/fa";
+
+type Props = {
+  title: string;
+  desc: string;
+  iconKey: string;
+};
+
+const iconsMap: Record<string, ReactNode> = {
+ accuracy: <FaBullseye size={24} color="#fff" />,
+academic: <FaGraduationCap size={24} color="#fff" />,
+integrity: <FaUserShield size={24} color="#fff" />,
+professional: <FaClock size={24} color="#fff" />,
+growth: <FaChartLine size={24} color="#fff" />,
+clarity: <FaLightbulb size={24} color="#fff" />,
+collaboration: <FaHandsHelping size={24} color="#fff" />,
+communication: <FaComments size={24} color="#fff" />,
+inspiration: <FaRegSmileBeam size={24} color="#fff" />,
+
+};
+
+export default function CoreValueCard({ title, desc, iconKey }: Props) {
   const [flipped, setFlipped] = useState(false);
+  const { t } = useTranslation();
 
   return (
-    <div
-      className="flip-wrapper w-100 ratio ratio-1x1 mb-4" 
-      style={{ perspective: "1000px" }}
-    >
+    <div className={styles.flipWrapper} style={{ perspective: "1200px" }}>
       <motion.div
-        className="card shadow text-center border-0"
+        className={styles.flipCard}
         initial={false}
         animate={{ rotateY: flipped ? 180 : 0 }}
-        transition={{ duration: 0.6, ease: "linear" }}
-        style={{ 
-          cursor: "pointer", 
-          transformStyle: "preserve-3d", 
-          height: "100%",
-          width: "100%"
-        }}
+        transition={{ duration: 0.65, ease: "easeInOut" }}
+        style={{ transformStyle: "preserve-3d" }}
         onClick={() => setFlipped(!flipped)}
       >
-        <div
-          className=" txt-colored card-body position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center"
-          style={{
-            backfaceVisibility: "hidden",
-          }}
-        >
-          <h5 className="mb-1 fw-bold">{title}</h5>
-          <small style={{ opacity: 0.8 }}>Click to see more ↻</small>
+        {/* Front */}
+<div className={styles.front} style={{ backfaceVisibility: "hidden" }}>
+{/* <div className={styles.iconBox}>
+  {iconsMap[iconKey] ?? <span style={{ fontSize: "11px", color: "#fff" }}>{iconKey}</span>}
+</div> */}
+
+          <h5 className={styles.cardTitle}>{title}</h5>
+
+   <p className={styles.frontSubtitle}>
+  {t("about-us.coreValuesSection.hints.preview")}
+</p>
+
+
+          <p className={styles.hint}>
+            {t("about-us.coreValuesSection.hints.flip")}
+          </p>
         </div>
 
+        {/* Back */}
         <div
-          className="card-body text-white bg-colored position-absolute w-100 h-100 d-flex align-items-center justify-content-center bg-white"
+          className={styles.back}
           style={{
             transform: "rotateY(180deg)",
-            backfaceVisibility: "hidden",
+            backfaceVisibility: "hidden"
           }}
         >
-          <p className="mb-0 text-center px-2 small">
-            {desc}
-          </p>
+          <h6 className={styles.backTitle}>{title}</h6>
+          <p className={styles.desc}>{desc}</p>
+          <span className={styles.backHint}>
+            {t("about-us.coreValuesSection.hints.back")}
+          </span>
         </div>
       </motion.div>
     </div>

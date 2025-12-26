@@ -1,23 +1,56 @@
-import CardImg from '../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/2150171443-rf86nxhh3rt5vs1e605rcz3im306zc7orcn8kj75hs.jpg'
-import { useRedirectToWhatsApp } from '../../Hooks/RedirectToWhat\'s/RedirectToWhatsApp'
-export default function ServiceCard() {
-  const {redirectToWhatsApp}=useRedirectToWhatsApp();
+import styles from "./ServiceCard.module.css";
+
+type Props = {
+  img: string;
+  title: string;
+  bullets: string[];
+  rating?: number;
+  buttonText: string;
+};
+
+export default function ServiceCard({
+  img,
+  title,
+  bullets,
+  rating = 4.8,
+  buttonText,
+}: Props) {
+  const safeRating = Number.isFinite(rating) ? rating : 4.8;
+
   return (
-    <>
-    <div className="card p-3 border-0 shadow rounded-0">
-  <img src={CardImg} className="card-img-top rounded-0" alt="..."/>
-  <div className="card-body text-start">
-    <h5 className="card-title">Tourism Translation</h5>
-    <ul className='text-muted'>
-        <li>Translation of tourism and hotel websites.</li>
-        <li>Translation of promotional and advertising materials for tourism.</li>
-        <li>Translation of brochures, leaflets, and tourist booklets.</li>
-        <li>Translation of hotel and airline booking platforms.</li>
-        <li>Translation of guidelines and other tourism-related documents into multiple languages.</li>
-    </ul>
-    <a onClick={()=>redirectToWhatsApp("Hello!, I need help")} className="btn btn-primary">Order Now</a>
-  </div>
-</div>
-    </>
-  )
+    <div className={styles.card}>
+      {/* ✅ Image */}
+      <div className={styles.imageWrapper}>
+<img
+  src={img}
+  alt={title}
+  className="w-100"
+  onError={(e) => (e.currentTarget.src = "/images/blogImage.jpg")}
+/>
+      </div>
+
+      <div className={styles.body}>
+        <h5 className={styles.title}>{title}</h5>
+
+        <ul className={styles.list}>
+          {bullets.map((item, index) => (
+            <li key={index} className={styles.listItem}>
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <div className={styles.divider} />
+
+        <div className={styles.footer}>
+          <div className={styles.ratingBox}>
+            <span className={styles.ratingNumber}>{safeRating.toFixed(1)}</span>
+            <span className={styles.stars}>★★★★★</span>
+          </div>
+
+          <button className={styles.button}>{buttonText}</button>
+        </div>
+      </div>
+    </div>
+  );
 }

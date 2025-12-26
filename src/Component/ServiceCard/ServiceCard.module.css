@@ -1,0 +1,114 @@
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.35s ease;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.12);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.body {
+  padding: 18px 18px 22px;
+}
+
+.title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  margin: 10px 0 14px;
+  color: #111827;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #6b7280;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.listItem {
+  text-align: left;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  margin: 18px 0 14px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.ratingBox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ratingNumber {
+  font-weight: 900;
+  color: #111827;
+  font-size: 1.05rem;
+}
+
+.stars {
+  color: #f7b500;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+.button {
+  background: #1b90c6;
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: #117cab;
+  transform: translateY(-2px);
+}
+
+/* ✅ RTL Support */
+html[dir="rtl"] .list {
+  padding-left: 0;
+  padding-right: 18px;
+}
+
+html[dir="rtl"] .listItem {
+  text-align: right;
+}

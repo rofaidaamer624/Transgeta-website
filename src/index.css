@@ -1,3 +1,156 @@
+/* ===== Navbar Base ===== */
+.custom-navbar {
+  height: 88px;
+  background: transparent;
+  transition: all 0.35s ease;
+  z-index: 999;
+}
+
+/* ===== On Scroll ===== */
+.custom-navbar.scrolled {
+  background-color: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  height: 72px;
+}
+
+/* ===== Logo ===== */
+.navbar-logo {
+  height: 100px;
+  transition: all 0.35s ease;
+}
+
+.custom-navbar.scrolled .navbar-logo {
+  height: 52px;
+}
+
+/* ===== Fix body offset ===== */
+body {
+  padding-top: 88px;
+}
+
+/* ===== Center Nav ===== */
+.nav-item-custom {
+  font-weight: 500;
+  color: #1f2937;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+  text-transform: capitalize;
+}
+
+.nav-item-custom:hover,
+.nav-item-custom.active {
+  color: #0d6efd;
+}
+
+.nav-item-custom.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #0d6efd;
+  border-radius: 2px;
+}
+
+/* ===== Buttons ===== */
+.btn-modern-primary {
+  background: linear-gradient(135deg, #0d6efd, #2563eb);
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 22px;
+  border: none;
+  font-weight: 500;
+  box-shadow: 0 6px 18px rgba(13, 110, 253, 0.25);
+  transition: all 0.3s ease;
+}
+
+.btn-modern-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(13, 110, 253, 0.35);
+}
+
+.btn-modern-outline {
+  border: 1px solid #0d6efd;
+  color: #0d6efd;
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-weight: 500;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-modern-outline:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 991px) {
+  .nav-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ////////////////////////////////////////////////// */
+
+/* ===== Section ===== */
+.previous-work-section {
+  padding: 100px 0;
+  background-color: #f9fafb;
+}
+
+/* ===== Header ===== */
+.section-header {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+/* ===== Stagger Cards ===== */
+.stagger-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stagger-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RTL enhancement (اختياري subtle) */
+html[dir="rtl"] .stagger-card {
+  transform: translateY(40px);
+}
+
+/* Hover polish (لو WorkCard يسمح) */
+.stagger-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .previous-work-section {
+    padding: 70px 0;
+  }
+}
+
+
+
+/* /////////////////////////////////////////////////// */
+
+
+
+
 .whatsAppIcon{
     position: fixed;
     bottom: 50px;

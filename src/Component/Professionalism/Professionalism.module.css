@@ -1,0 +1,66 @@
+.section {
+  padding: 85px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+}
+
+
+.logoBadge {
+  width: 86px;
+  height: 86px;
+  border-radius: 22px;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+  width: 58px;
+  height: auto;
+  object-fit: contain;
+}
+
+.title {
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-weight: 900;
+  line-height: 1.35;
+  margin-bottom: 18px;
+  color: #111827;
+}
+
+.desc {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #6b7280;
+  margin: 0 auto;
+  max-width: 880px;
+}
+
+/* RTL تحسين */
+html[dir="rtl"] .desc,
+html[dir="rtl"] .title {
+  letter-spacing: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .section {
+    padding: 65px 0;
+  }
+
+  .logoBadge {
+    width: 78px;
+    height: 78px;
+    border-radius: 18px;
+  }
+
+  .logo {
+    width: 50px;
+  }
+
+  .desc {
+    font-size: 1rem;
+  }
+}

@@ -1,3 +1,237 @@
-footer{
-    background:linear-gradient(#1b90c6,#1b90c6), url('../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/bg-4.png') center/cover no-repeat;
+.tg-footer {
+  padding: 55px 0 0;
+background: linear-gradient(rgba(27, 144, 198, 0.95), rgba(27, 144, 198, 0.95));
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle background shapes */
+.tg-footer::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -140px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  filter: blur(28px);
+}
+
+.tg-footer::after {
+  content: "";
+  position: absolute;
+  bottom: -140px;
+  left: -160px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.12);
+  filter: blur(32px);
+}
+
+.tg-footer * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ✅ logo */
+.tg-footer-logo {
+  width: 140px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.tg-footer-desc {
+  max-width: 360px;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 5px;
+}
+
+.tg-footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.tg-footer-contact a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.25s ease;
+}
+
+.tg-footer-contact a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ New: shift down for Quick Links + Stay Connected */
+.tg-footer-shift {
+  margin-top: 140px; 
+}
+
+/* ✅ Titles */
+.tg-footer-title {
+  font-size: 1.05rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+/* ✅ Links */
+.tg-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.tg-footer-links a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: 0.25s ease;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.tg-footer-links a:hover {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+html[dir="rtl"] .tg-footer-links a:hover {
+  transform: translateX(-3px);
+}
+
+/* ✅ Newsletter text */
+.tg-footer-desc2 {
+  opacity: 0.92;
+  max-width: 520px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+/* ✅ Newsletter */
+.tg-newsletter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tg-input {
+  flex: 1;
+  min-width: 230px;
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0 14px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  backdrop-filter: blur(8px);
+}
+
+.tg-input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.tg-btn {
+  height: 46px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 12px;
+  background: #111827;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.tg-btn:hover {
+  transform: translateY(-2px);
+  background: #0b1220;
+}
+
+/* ✅ Social */
+.tg-social {
+  display: flex;
+  gap: 9px;
+}
+
+.tg-social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+  font-size: 1.05rem;
+}
+
+.tg-social a:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ✅ Bottom */
+.tg-footer-bottom {
+  margin-top: 36px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  opacity: 0.95;
+}
+
+.tg-footer-bottom p {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.tg-bottom-links {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.tg-bottom-links a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.tg-bottom-links a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .tg-footer {
+    padding: 45px 0 0;
+  }
+
+  .tg-footer-logo {
+    width: 120px;
+  }
+
+  .tg-footer-shift {
+    margin-top: 18px; /* أقل على الموبايل */
+  }
 }

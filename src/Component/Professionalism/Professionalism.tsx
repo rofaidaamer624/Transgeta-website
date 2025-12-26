@@ -1,22 +1,37 @@
+import styles from "./Professionalism.module.css";
+import { useTranslation } from "react-i18next";
+
 export default function Professionalism() {
+  const { t } = useTranslation();
+
   return (
-    <>
-    <section>
-        <div className="container my-5">
-            <div className="row justify-content-center">
-                <div className="col-md-4 col-sm-8 col-12 text-center">
-                    <img src="images/logo(3).png" alt="" className="img-fluid" />
-                </div>
-                <div className="col-12 text-center">
-                    <h2 className='fw-bolder my-5 display-6 text-center'>
-How can academic consultations at Trans-Gate improve Your research?               
-         </h2>
-                    <h3 className='text-muted fs-6 w-75 mx-auto'>
-Our consultations provide personalized support to identify gaps, clarify concepts, and structure your work for maximum clarity and impact. We guide you step by step, ensuring your research is logically organized, academically rigorous, and clearly communicated.                        </h3>
-                </div>
+    <section className={styles.section}>
+      <div className="container">
+        <div className="row justify-content-center text-center">
+
+          {/* Logo Badge */}
+          <div className="col-12 d-flex justify-content-center mb-4">
+            <div className={styles.logoBadge}>
+              <img src="images/logo(3).png" alt="TransGate" className={styles.logo} />
             </div>
+          </div>
+
+          {/* Title */}
+          <div className="col-lg-10 col-12">
+            <h2 className={styles.title}>
+              {t("professionalism.title")}
+            </h2>
+          </div>
+
+          {/* Description */}
+          <div className="col-lg-9 col-12">
+            <p className={styles.desc}>
+              {t("professionalism.desc")}
+            </p>
+          </div>
+
         </div>
+      </div>
     </section>
-    </>
-  )
+  );
 }
