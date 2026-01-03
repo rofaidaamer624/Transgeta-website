@@ -24,7 +24,7 @@ function getPartnerLogo(partner: Partner) {
   }
 
   if (partner.logo_path) {
-    return `${FILE_BASE_URL}/files/partners/${partner.logo_path}`;
+    return `${FILE_BASE_URL}/api/files/partners/${partner.logo_path}`;
   }
 
   return "/images/default-logo.png";
@@ -40,7 +40,7 @@ export default function BrandsCarousal() {
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/partners`)
+      .get(`${BASE_URL}/api/partners`)
       .then((response) => {
         const list =
           response.data?.data?.partners ||
