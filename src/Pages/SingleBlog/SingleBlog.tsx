@@ -129,7 +129,8 @@ try {
   setLoading(true);
   setError("");
 
-  const res = await fetch(`${API_BASE_URL}/api/articles/${id}`, {
+
+  const res = await fetch(`${BASE_URL}/api/articles/${id}`, {
     headers: { Accept: "application/json" },
   });
 
