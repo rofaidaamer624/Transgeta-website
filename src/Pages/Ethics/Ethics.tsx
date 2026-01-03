@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import styles from "./Ethics.module.css";
 
+
 export default function Ethics() {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === "ar";

@@ -4,6 +4,7 @@ import Breadcrumb from "../../Component/Breadcrumb/Breadcrumb";
 import { useTranslation } from "react-i18next";
 import styles from "./SingleBlog.module.css";
 
+
 import {
   FaFacebookF,
   FaInstagram,
@@ -124,33 +125,41 @@ export default function SingleBlog() {
     async function fetchArticle() {
       if (!id) return;
 
-      try {
-        setLoading(true);
-        setError("");
+try {
+  setLoading(true);
+  setError("");
 
-        const res = await fetch(`${BASE_URL}/api/articles/${id}`, {
-          headers: { Accept: "application/json" },
-        });
+  const res = await fetch(`${API_BASE_URL}/api/articles/${id}`, {
+    headers: { Accept: "application/json" },
+  });
 
-        if (!res.ok) throw new Error("Failed to fetch article");
+  if (!res.ok) {
+    throw new Error(`Failed to fetch article (status: ${res.status})`);
+  }
 
-        const json = await res.json();
+  const json = await res.json();
 
-        if (!json.success || !json.data) {
-          throw new Error("Invalid API response");
-        }
+  if (!json?.success || !json?.data) {
+    throw new Error("Invalid API response");
+  }
 
-        setArticle(json.data);
-      } catch (e) {
-        console.error("Fetch Article Error:", e);
-        setError(t("article.single.error"));
-      } finally {
-        setLoading(false);
-      }
+  const article = json.data.article ?? json.data;
+  setArticle(article);
+
+} catch (err: unknown) {
+  if (err instanceof Error) {
+    setError(err.message);
+  } else {
+    setError("Something went wrong");
+  }
+} finally {
+  setLoading(false);
+}
+
     }
 
     fetchArticle();
-  }, [id, t]);
+  }, [id]); 
 
   const title = isArabic ? article?.title_ar : article?.title_en;
   const summary = isArabic ? article?.summary_ar : article?.summary_en;
