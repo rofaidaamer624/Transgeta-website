@@ -1,4 +1,6 @@
 import { useMemo, useState } from "react";
+const BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "https://api.transgateacd.com";
 
 type BlogCardProps = {
   blogDate: string;
@@ -16,7 +18,7 @@ export default function BlogCrad({
   const [expanded, setExpanded] = useState(false);
 
   const imageSrc = blogImage
-    ? `http://127.0.0.1:8000/files/articles/${blogImage}`
+    ? `${BASE_URL}/api/files/articles/${blogImage}`
     : "/images/blogImage.jpg";
 
   const shouldShowReadMore = useMemo(() => {

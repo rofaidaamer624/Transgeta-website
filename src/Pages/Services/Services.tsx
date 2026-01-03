@@ -15,7 +15,8 @@ import type { Swiper as SwiperType } from "swiper";
 // ✅ ConvertLang
 import ConvertLang from "../../Component/ConvertLang/ConvertLang";
 
-const BASE_URL = "http://127.0.0.1:8000";
+const BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "https://api.transgateacd.com";
 const FALLBACK_IMG = "/images/blogImage.jpg";
 const WHATSAPP_NUMBER = "201234567890";
 

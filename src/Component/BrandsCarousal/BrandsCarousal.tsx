@@ -6,7 +6,7 @@ import axios from "axios";
 import styles from "./BrandsCarousal.module.css";
 import { useTranslation } from "react-i18next";
 
-const API_BASE_URL = "http://127.0.0.1:8000/api";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://api.transgateacd.com";
 const FILE_BASE_URL = "http://127.0.0.1:8000";
 
 interface Partner {
@@ -40,7 +40,7 @@ export default function BrandsCarousal() {
 
   useEffect(() => {
     axios
-      .get(`${API_BASE_URL}/partners`)
+      .get(`${BASE_URL}/partners`)
       .then((response) => {
         const list =
           response.data?.data?.partners ||
