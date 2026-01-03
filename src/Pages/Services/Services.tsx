@@ -115,7 +115,7 @@ export default function AllServicesPreview() {
   // ✅ Fetch all services مرة واحدة
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/api/public/services`, {
+      .get(`${BASE_URL}/public/services`, {
         headers: { Accept: "application/json" },
       })
       .then((res) => {
