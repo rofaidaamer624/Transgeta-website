@@ -20,25 +20,24 @@
       "partnerships": "Partnerships",
       "experience": "Years of Experience"
     },
-    "description": "TransGate delivers precise, professional translation services for academic and scientific work, alongside expert consultations to enhance research quality and impact. Serving clients in over 35 countries, we empower scholars worldwide to communicate their ideas with clarity, accuracy, and confidence.",
+    "description": "At Trans-Gate, we are committed to both precision and guidance. Our translation services provide accurate, professional translations for theses, dissertations, and scientific research, ensuring your ideas are communicated clearly and effectively. Our academic consultations offer expert support to enhance research quality, structure, and overall academic influence, helping you achieve your full potential. We uphold the highest standards of professionalism and quality, serving clients in over 35 countries, including Egypt, Saudi Arabia, the United Arab Emirates, Kuwait, Qatar, Oman, and more. With a global reach, we empower scholars and researchers worldwide to convey their ideas with clarity, accuracy, and impact.",
     "cta": "Get Started"
   },
-
   "accuracy": {
-    "title": "Are you looking for a reliable & professional translation?",
-    "description": "Translation is not just converting words — it’s the precise transfer of meaning, context, and intent. That’s why we provide you with accurate, high-quality translations delivered by certified language experts.",
+    "title": "Precision & Accuracy",
+    "description": "We deliver highly accurate results powered by advanced technology, ensuring consistent performance and dependable outcomes you can trust.",
     "cards": {
       "card1": {
-        "title": "Flawless Translation",
-        "text": "We deliver translations free of errors, preventing delays or setbacks in your academic and professional endeavors. Our precision eliminates mistakes that could harm your progress."
+        "title": "Smart Measurement",
+        "text": "Our tools provide precise measurements using advanced sensors and modern techniques."
       },
       "card2": {
-        "title": "Specialized Linguists",
-        "text": "Your documents are managed by experts with deep linguistic knowledge and contextual understanding."
+        "title": "Reliable Results",
+        "text": "We ensure stable and accurate outputs across different conditions and environments."
       },
       "card3": {
-        "title": "Academic Research Support",
-        "text": "We provide guidance to enhance the quality and impact of your research. From structuring your thesis or dissertation to refining your arguments and methodology, we help ensure your work meets the highest academic standards. Our support empowers you to present ideas with clarity, rigor, and confidence."
+        "title": "High Efficiency",
+        "text": "Our process is optimized to reduce errors and increase reliability in every step."
       }
     }
   },
@@ -99,16 +98,16 @@
   "description": "At TransGate, we ensure every translation is delivered with the highest level of accuracy, quality, and professionalism through strict review processes and expert linguists.",
   "cards": {
     "card1": {
-      "title": "Certified Quality",
-      "text": "We provide certified translations accepted by embassies, universities, and official institutions."
+      "title": "Flawless Translation",
+      "text": "We deliver translations free of errors, preventing delays or setbacks in your academic and professional endeavors."
     },
     "card2": {
-      "title": "Specialized Translators",
-      "text": "Our translators are experts in legal, academic, and medical fields to ensure industry-level precision."
+      "title": "Specialized Linguists",
+      "text": "Your documents are managed by experts with deep linguistic knowledge and contextual understanding. "
     },
     "card3": {
-      "title": "Fast & Reliable Delivery",
-      "text": "We deliver accurate translations on time with guaranteed consistency and professional formatting."
+      "title": "Academic Research Support ",
+      "text": "We provide guidance to enhance the quality and impact of your research. From structuring your thesis or dissertation to refining your arguments and methodology, we help ensure your work meets the highest academic standards. Our support empowers you to present your ideas with clarity, rigor, and confidence."
     }
   }
 },
@@ -374,6 +373,47 @@
       "highlight": "Clients are fully responsible for their academic and professional work, and for complying with relevant laws, institutional policies, and academic integrity requirements."
     }
   },
+  "coreValues": {
+    "title": "Trans-Gate Core Values",
+    "items": {
+      "accuracy": {
+        "title": "Accuracy",
+        "desc": "We prioritize precision in every translation, ensuring your ideas are conveyed clearly and faithfully."
+      },
+      "academic": {
+        "title": "Academic Excellence",
+        "desc": "We support research and learning by providing expert guidance that strengthens structure, clarity, and impact."
+      },
+      "integrity": {
+        "title": "Integrity",
+        "desc": "We maintain honesty and transparency in all our services, respecting confidentiality and ethical standards."
+      },
+      "professional": {
+        "title": "Professionalism",
+        "desc": "We deliver every project with dedication, reliability, and meticulous attention to detail."
+      },
+      "growth": {
+        "title": "Continuous Growth",
+        "desc": "We invest in ongoing learning, staying updated in language, academic standards, and research trends."
+      },
+      "clarity": {
+        "title": "Clarity",
+        "desc": "We simplify complex ideas, making your message understandable and meaningful to your audience."
+      },
+      "collaboration": {
+        "title": "Supportive Collaboration",
+        "desc": "We work closely with clients, providing guidance, feedback, and personalized solutions."
+      },
+      "communication": {
+        "title": "Excellence in Communication",
+        "desc": "We value clear, concise, and impactful expression in every project, written or consulted."
+      },
+      "inspiration": {
+        "title": "Inspiration and Motivation",
+        "desc": "We foster a positive, uplifting approach, encouraging clients to reach higher levels of knowledge and achievement."
+      }
+    }
+  },
   
   "footer": {
     "desc": "Professional translation and academic consulting — delivering clarity, accuracy, and impact worldwide.",
@@ -459,6 +499,78 @@
       "relatedTitle": "Related Post & Articles",
       "relatedLoading": "Loading related articles...",
       "noRelated": "No related articles found."
+    }
+  },
+  "values": {
+    "title": "Our Values",
+    "cards": {
+      "professionalism": {
+        "title": "Professionalism",
+        "desc": "A core principle that guides our approach in every project.",
+        "more": "Click for more"
+      },
+      "integrity": {
+        "title": "Integrity",
+        "desc": "We uphold transparency and honesty in everything we do.",
+        "more": "Click for more"
+      },
+      "academic": {
+        "title": "Academic Excellence",
+        "desc": "We support research and learning by providing expert guidance that strengthens structure, clarity, and impact.",
+        "more": "Click for more"
+      },
+      "accuracy": {
+        "title": "Accuracy",
+        "desc": "We ensure precise results through careful review and high-quality standards.",
+        "more": "Click for more"
+      },
+      "communication": {
+        "title": "Excellence in Communication",
+        "desc": "We communicate clearly and professionally to ensure smooth collaboration.",
+        "more": "Click for more"
+      },
+      "collaboration": {
+        "title": "Supportive Collaboration",
+        "desc": "We work closely with our clients to achieve the best outcomes together.",
+        "more": "Click for more"
+      },
+      "clarity": {
+        "title": "Clarity",
+        "desc": "We deliver content that is easy to understand, well-structured, and impactful.",
+        "more": "Click for more"
+      },
+      "growth": {
+        "title": "Continuous Growth",
+        "desc": "We constantly improve our processes and skills to provide the highest value.",
+        "more": "Click for more"
+      },
+      "back": "Click to go back"
+    }
+  },
+  "freeTrans": {
+    "btn": "Check your research for free",
+    "title": "Upload your research",
+    "subtitle": "Fill in your details and upload your PDF. We will review it manually.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "mobile": "Mobile Number",
+      "file": "Upload research (PDF)",
+      "namePlaceholder": "Enter your full name",
+      "emailPlaceholder": "Enter your email address",
+      "mobilePlaceholder": "Enter your mobile number",
+      "submit": "Send",
+      "sending": "Sending...",
+      "close": "Close",
+      "success": "Sent successfully! We will contact you soon.",
+      "fail": "Something went wrong. Please try again.",
+      "errors": {
+        "name": "Full name is required",
+        "email": "Email is required",
+        "emailInvalid": "Enter a valid email",
+        "mobile": "Mobile number is required",
+        "file": "Please upload a PDF file"
+      }
     }
   }
 }

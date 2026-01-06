@@ -53,7 +53,7 @@ export default function CoreValueCard({ title, desc, iconKey }: Props) {
 <div className={styles.front} style={{ backfaceVisibility: "hidden" }}>
 <div className={styles.iconBox}>
   {iconsMap[iconKey] ?? (
-    <span style={{ fontSize: "11px", color: "#fff" }}>{iconKey}</span>
+    <span style={{ fontSize: "30px", color: "#fff" }}>{iconKey}</span>
   )}
 </div>
 

@@ -7,7 +7,7 @@ import { LanguageContext } from "../../Context/LanguageContext";
 
 import styles from "./NavBar.module.css";
 
-const WHATSAPP_NUMBER = "201098396598"; // ✅ رقمك هنا
+const WHATSAPP_NUMBER = "201098396598"; 
 
 export default function NavBar() {
   const { t, i18n } = useTranslation();
@@ -56,7 +56,6 @@ export default function NavBar() {
       className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}
     >
       <Container fluid className="px-5">
-        {/* ✅ LOGO */}
         <Navbar.Brand as={Link} to="/" className={styles.brand}>
           <img
             src={logo}
@@ -68,7 +67,6 @@ export default function NavBar() {
         <Navbar.Toggle aria-controls="navbar-nav" className={styles.toggle} />
 
         <Navbar.Collapse id="navbar-nav">
-          {/* ✅ LINKS */}
           <Nav className={`mx-auto ${styles.navLinks}`}>
             <NavLink
               to="/"

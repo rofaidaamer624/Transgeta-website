@@ -12,7 +12,7 @@ export default function Professionalism() {
           {/* Logo Badge */}
           <div className="col-12 d-flex justify-content-center mb-4">
             <div className={styles.logoBadge}>
-              <img src="images/logo(3).png" alt="TransGate" className={styles.logo} />
+              <img src="/images/tr-removebg-preview.png" alt="TransGate" className={styles.logo} />
             </div>
           </div>
 

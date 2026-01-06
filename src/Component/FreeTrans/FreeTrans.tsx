@@ -1,74 +1,229 @@
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import logo from '../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/cropped-WhatsApp_Image_2025-11-12_at_17-06-08_0162802e-remov (3).png'
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import { useTranslation } from "react-i18next";
+// import emailjs from "@emailjs/browser"; ✅ مش مستخدم حالياً
+import logo from "../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/tr-removebg-preview (1).png";
 
+/* ✅ Types */
+type FormDataType = {
+  name: string;
+  email: string;
+  mobile: string;
+  file: File | null;
+};
+
+type ErrorsType = {
+  name?: string;
+  email?: string;
+  mobile?: string;
+  file?: string;
+};
 
 export default function FreeTrans() {
+  const { t, i18n } = useTranslation();
+  const isEnglish = i18n.language === "en";
 
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  const [formData, setFormData] = useState<FormDataType>({
+    name: "",
+    email: "",
+    mobile: "",
+    file: null,
+  });
+
+  const [errors, setErrors] = useState<ErrorsType>({});
+  const [msg, setMsg] = useState("");
+
+  const handleClose = () => {
+    setShow(false);
+    setErrors({});
+    setMsg("");
+  };
+
+  const handleShow = () => setShow(true);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, files } = e.target;
+
+    if (name === "file") {
+      const file = files?.[0];
+
+      if (file) {
+        // ✅ Limit file size to 5MB
+        if (file.size > 5 * 1024 * 1024) {
+          setErrors((prev) => ({
+            ...prev,
+            file: "File must be less than 5MB",
+          }));
+          return;
+        }
+
+        setErrors((prev) => ({ ...prev, file: "" }));
+        setFormData((prev) => ({
+          ...prev,
+          file,
+        }));
+      }
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
+  };
+
+  const validate = () => {
+    const newErrors: ErrorsType = {};
+
+    if (!formData.name.trim()) newErrors.name = t("freeTrans.form.errors.name");
+    if (!formData.email.trim()) newErrors.email = t("freeTrans.form.errors.email");
+    if (!formData.mobile.trim()) newErrors.mobile = t("freeTrans.form.errors.mobile");
+    if (!formData.file) newErrors.file = t("freeTrans.form.errors.file");
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // ✅ API base URL from env
+  const API_URL = import.meta.env.VITE_API_URL || "https://api.transgateacd.com/api";
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setMsg("");
+
+    if (!validate()) return;
+
+    try {
+      setLoading(true);
+
+      const form = new FormData();
+      form.append("name", formData.name);
+      form.append("email", formData.email);
+      form.append("mobile", formData.mobile);
+      form.append("file", formData.file!);
+
+    const res = await fetch(`${API_URL}/free-translation`, {
+  method: "POST",
+  body: form,
+  headers: {
+    Accept: "application/json",
+  },
+});
 
 
-    {/* <Modal show={show} onHide={handleClose} animation={false}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal> */}
-    return (
-        <>
-            <div className="freeTransContainer">
-                <Button className='rounded-pill shadow' variant="primary" onClick={handleShow}>
-            Check your research for free
-                </Button>
-                <Modal show={show} centered  onHide={handleClose}>
-        <Modal.Header closeButton>
-        </Modal.Header>
+      // ✅ Safe handling for JSON or text response
+      const text = await res.text();
+      let data: any = {};
+      try {
+        data = JSON.parse(text);
+      } catch {
+        data = { message: text };
+      }
 
-                    <Modal.Body className='text-center'>
-                        <img src={logo}
-                            width={150}
-                            height={150}
-                            alt="" />
-                        <h2>Upload your research</h2>
-                        <h3 className='text-muted fs-6 fw-lighter'>Fill in your details and upload your PDF. We will review it manually.</h3>
-                        <form className='text-start'>
-                            <div className="mb-3">
-                                <label htmlFor="exampleInputEmail1" className="form-label">Full Name</label>
-                                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your full name" />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="exampleInputPassword1" className="form-label">Email</label>
-                                <input type="password" className="form-control" id="exampleInputPassword1" placeholder='Enter your email address' />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="exampleInputPassword1" className="form-label">Mobile Number</label>
-                                <input type="password" className="form-control" id="exampleInputPassword1" placeholder='Enter your mobile number' />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="formFile" className="form-label">Upload research (PDF)</label>
-                                <input className="form-control" type="file" id="formFile" accept=".pdf,application/pdf" />
-                            </div>
-                            <button type="submit" className="btn btn-primary">Save</button>
-                            <Button variant="secondary" className='mx-3' onClick={handleClose}>
-                                Close
-                            </Button>
+      if (!res.ok) throw new Error(data?.message || "Failed");
 
-                        </form>
-                    </Modal.Body>
-                </Modal>
+      setMsg("✅ Sent successfully!");
+      setFormData({ name: "", email: "", mobile: "", file: null });
+    } catch (err: any) {
+      console.log(err);
+      setMsg(`❌ Failed to send: ${err?.message || ""}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="freeTransContainer">
+      <Button className="rounded-pill shadow" variant="primary" onClick={handleShow}>
+        {t("freeTrans.btn")}
+      </Button>
+
+      <Modal show={show} centered onHide={handleClose}>
+        <Modal.Header closeButton />
+
+        <Modal.Body className={`text-center ${isEnglish ? "" : "text-end"}`}>
+          <img src={logo} width={140} height={140} alt="logo" />
+
+          <h2 className="fw-bold mt-3">{t("freeTrans.title")}</h2>
+          <p className="text-muted fs-6 fw-light px-3">{t("freeTrans.subtitle")}</p>
+
+          {msg && <div className="alert alert-info mt-3">{msg}</div>}
+
+          <form
+            onSubmit={handleSubmit}
+            dir={isEnglish ? "ltr" : "rtl"}
+            className="mt-4 text-start"
+          >
+            {/* Name */}
+            <div className="mb-3">
+              <label className="form-label">{t("freeTrans.form.name")}</label>
+              <input
+                type="text"
+                className={`form-control ${errors.name ? "is-invalid" : ""}`}
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder={t("freeTrans.form.namePlaceholder")}
+              />
+              {errors.name && <div className="invalid-feedback">{errors.name}</div>}
             </div>
-        </>
-    )
+
+            {/* Email */}
+            <div className="mb-3">
+              <label className="form-label">{t("freeTrans.form.email")}</label>
+              <input
+                type="email"
+                className={`form-control ${errors.email ? "is-invalid" : ""}`}
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder={t("freeTrans.form.emailPlaceholder")}
+              />
+              {errors.email && <div className="invalid-feedback">{errors.email}</div>}
+            </div>
+
+            {/* Mobile */}
+            <div className="mb-3">
+              <label className="form-label">{t("freeTrans.form.mobile")}</label>
+              <input
+                type="tel"
+                className={`form-control ${errors.mobile ? "is-invalid" : ""}`}
+                name="mobile"
+                value={formData.mobile}
+                onChange={handleChange}
+                placeholder={t("freeTrans.form.mobilePlaceholder")}
+              />
+              {errors.mobile && <div className="invalid-feedback">{errors.mobile}</div>}
+            </div>
+
+            {/* File */}
+            <div className="mb-3">
+              <label className="form-label">{t("freeTrans.form.file")}</label>
+              <input
+                type="file"
+                name="file"
+                accept="*"
+                className={`form-control ${errors.file ? "is-invalid" : ""}`}
+                onChange={handleChange}
+              />
+              {errors.file && <div className="invalid-feedback">{errors.file}</div>}
+            </div>
+
+            <div className="d-flex justify-content-center gap-2 mt-3">
+              <Button type="submit" disabled={loading}>
+                {loading ? "Sending..." : t("freeTrans.form.submit")}
+              </Button>
+
+              <Button variant="secondary" onClick={handleClose}>
+                {t("freeTrans.form.close")}
+              </Button>
+            </div>
+          </form>
+        </Modal.Body>
+      </Modal>
+    </div>
+  );
 }

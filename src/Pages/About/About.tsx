@@ -55,7 +55,7 @@ export default function About() {
                   }`}
                 >
                   <div className="d-flex align-items-center gap-3">
-                    <img src="/images/logo.png" className={`${styles.logo}`} alt="logo" />
+                    <img src="/images/tr.jpg" className={`${styles.logo}`} alt="logo" />
                     <div>
                       <h2 className={`${styles.title}`}>{t("about-us.title")}</h2>
                       <p className={`${styles.subtitle}`}>{t("about-us.subtitle")}</p>

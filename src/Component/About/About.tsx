@@ -1,8 +1,8 @@
 import { FaRegCircleDot } from "react-icons/fa6";
-import { FaCheckCircle } from "react-icons/fa";
+// import { FaCheckCircle } from "react-icons/fa";
 import styles from "./About.module.css";
-import { MdGTranslate } from "react-icons/md";
-import { HiAcademicCap } from "react-icons/hi2";
+// import { MdGTranslate } from "react-icons/md";
+// import { HiAcademicCap } from "react-icons/hi2";
 import { useTranslation } from "react-i18next";
 
 export default function About() {
@@ -27,7 +27,7 @@ export default function About() {
         <h3 className={styles.question}>{t("about.question")}</h3>
         <p className={styles.answer}>{t("about.answer")}</p>
 
-        <div className={styles.valuesBox}>
+        {/* <div className={styles.valuesBox}>
           <h5 className={styles.valuesTitle}>{t("about.valuesTitle")}</h5>
 
           <ul className="row p-0 m-0 list-unstyled">
@@ -46,7 +46,7 @@ export default function About() {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
 
         <div className={styles.servicesText}>
           <div className="mb-3">
@@ -61,7 +61,7 @@ export default function About() {
         </div>
 
         <div className={`${styles.cardWrapper} mt-4`}>
-          <div className={styles.serviceCard}>
+          {/* <div className={styles.serviceCard}>
             <div className={styles.iconBox}>
               <MdGTranslate size={36} className="txt-colored" />
             </div>
@@ -69,9 +69,9 @@ export default function About() {
               <h5 className="m-0 fw-bold">{t("about.card1Title")}</h5>
               <p className={styles.cardDesc}>{t("about.card1Desc")}</p>
             </div>
-          </div>
+          </div> */}
 
-          <div className={styles.serviceCard}>
+          {/* <div className={styles.serviceCard}>
             <div className={styles.iconBox}>
               <HiAcademicCap size={34} className="txt-colored" />
             </div>
@@ -79,7 +79,7 @@ export default function About() {
               <h5 className="m-0 fw-bold">{t("about.card2Title")}</h5>
               <p className={styles.cardDesc}>{t("about.card2Desc")}</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

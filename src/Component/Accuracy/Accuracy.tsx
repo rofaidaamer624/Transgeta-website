@@ -24,7 +24,7 @@ export default function Accuracy() {
           <div className="row justify-content-center text-white">
             <div className="col-md-2 col-sm-4 col-6 text-center">
               <img
-                src="images/grayLogoPreview.png"
+                src="/images/tr-removebg-preview.png"
                 alt=""
                 className="img-fluid"
               />

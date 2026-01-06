@@ -5,9 +5,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./BrandsCarousal.module.css";
 import { useTranslation } from "react-i18next";
+import { getPartnerLogoUrl } from "../../utils/getPartnerLogoUrl";
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://api.transgateacd.com";
-const FILE_BASE_URL = "http://127.0.0.1:8000";
+const BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "https://api.transgateacd.com";
 
 interface Partner {
   id: number;
@@ -18,25 +19,13 @@ interface Partner {
   logo_path?: string | null;
 }
 
-function getPartnerLogo(partner: Partner) {
-  if (partner.logo_url && partner.logo_url.startsWith("http")) {
-    return partner.logo_url;
-  }
-
-  if (partner.logo_path) {
-    return `${FILE_BASE_URL}/api/files/partners/${partner.logo_path}`;
-  }
-
-  return "/images/default-logo.png";
-}
-
 export default function BrandsCarousal() {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === "ar";
 
   const [partners, setPartners] = useState<Partner[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<boolean>(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     axios
@@ -53,51 +42,11 @@ export default function BrandsCarousal() {
         console.error("Failed to load partners:", e);
         setError(true);
       })
-      .finally(() => {
-        setLoading(false);
-      });
+      .finally(() => setLoading(false));
   }, []);
 
-  // ✅ Loading UI
-  if (loading) {
-    return (
-      <section className={styles.section}>
-        <div className="container">
-          <div className={styles.header}>
-            <h2 className={styles.title}>{t("partners.title")}</h2>
-          </div>
-
-          <div className="row justify-content-center">
-            <div className="col-12">
-              <div className={styles.skeletonGrid}>
-                {Array.from({ length: 6 }).map((_, idx) => (
-                  <div key={idx} className={styles.skeletonCard}></div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  // ✅ Error UI
-  if (error) {
-    return (
-      <section className={styles.section}>
-        <div className="container text-center">
-          <div className={styles.header}>
-            <h2 className={styles.title}>{t("partners.title")}</h2>
-          </div>
-
-          <div className={styles.errorBox}>
-            <p className="m-0">{t("partners.error")}</p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error loading partners</div>;
   if (!partners.length) return null;
 
   return (
@@ -107,53 +56,46 @@ export default function BrandsCarousal() {
           <h2 className={styles.title}>{t("partners.title")}</h2>
         </div>
 
-        <div className="row justify-content-center">
-          <div className="col-12">
-            <Swiper
-              className={styles.swiper}
-              dir={isArabic ? "rtl" : "ltr"} // ✅ يخلي الاتجاه مظبوط في العربي
-              breakpoints={{
-                0: { slidesPerView: 2, spaceBetween: 12 },
-                768: { slidesPerView: 3, spaceBetween: 16 },
-                992: { slidesPerView: 5, spaceBetween: 18 },
-              }}
-              modules={[Autoplay]}
-              loop
-              loopAdditionalSlides={12}
-              speed={7000} // ✅ smoother continuous
-              autoplay={{
-                delay: 0,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-              }}
-              allowTouchMove={true}
-            >
-              {partners.map((partner) => (
-                <SwiperSlide key={partner.id}>
-                  <a
-                    className={styles.partnerCard}
-                    href={partner.website_url || "#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => {
-                      if (!partner.website_url) e.preventDefault();
+        <Swiper
+          className={styles.swiper}
+          dir={isArabic ? "rtl" : "ltr"}
+          breakpoints={{
+            0: { slidesPerView: 2, spaceBetween: 12 },
+            768: { slidesPerView: 3, spaceBetween: 16 },
+            992: { slidesPerView: 5, spaceBetween: 18 },
+          }}
+          modules={[Autoplay]}
+          loop
+          speed={7000}
+          autoplay={{ delay: 0, disableOnInteraction: false }}
+        >
+          {partners.map((partner) => (
+            <SwiperSlide key={partner.id}>
+              <a
+                className={styles.partnerCard}
+                href={partner.website_url || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  if (!partner.website_url) e.preventDefault();
+                }}
+                title={partner.name}
+              >
+                <div className={styles.logoBox}>
+                  <img
+                    src={partner.logo_url?.startsWith("http") ? partner.logo_url : getPartnerLogoUrl(partner.logo_path)}
+                    alt={partner.name}
+                    className={styles.logo}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src =
+                        "/images/default-logo.png";
                     }}
-                    title={partner.name}
-                  >
-                    <div className={styles.logoBox}>
-                      <img
-                        src={getPartnerLogo(partner)}
-                        alt={partner.name}
-                        className={styles.logo}
-                        loading="lazy"
-                      />
-                    </div>
-                  </a>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
+                  />
+                </div>
+              </a>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );

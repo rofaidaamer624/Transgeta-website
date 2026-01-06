@@ -1,6 +1,6 @@
 import "./Footer.css";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/Untitled_design__14_-removebg-preview.png";
+import logo from "../../assets/images/abfc1ea0-56f6-47a8-b323-afbc9719c964/tr-removebg-preview (1).png";
 
 import { FaWhatsapp, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -21,7 +21,7 @@ export default function Footer() {
             <p className="tg-footer-desc">{t("footer.desc")}</p>
 
             <div className="tg-footer-contact">
-              <a href="mailto:info@transgateacd.online">info@transgateacd.online</a>
+              <a href="mailto:info@transgateacd.com">info@transgateacd.com</a>
               <a href="tel:+2001098396598">+20 01098396598</a>
             </div>
 

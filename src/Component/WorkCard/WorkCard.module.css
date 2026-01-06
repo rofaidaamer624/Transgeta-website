@@ -2,3 +2,21 @@
     height:200px;
     aspect-ratio: 4/3;
 }
+.work-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ✅ Fix previous work cards on mobile */
+@media (max-width: 768px) {
+  .work-card.top,
+  .work-card.bottom {
+    transform: translateY(0) !important;
+    margin-top: 0 !important;
+  }
+
+  .previous-work-section .stagger-card {
+    margin-top: 0 !important;
+  }
+}

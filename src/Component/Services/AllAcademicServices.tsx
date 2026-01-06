@@ -15,7 +15,7 @@ import type { Swiper as SwiperType } from "swiper";
 
 const BASE_URL =
   import.meta.env.VITE_API_BASE_URL || "https://api.transgateacd.com";
-const FALLBACK_IMG = "/images/blogImage.jpg";
+// const FALLBACK_IMG = "/images/blogImage.jpg";
 const WHATSAPP_NUMBER = "201234567890";
 
 type Service = {
@@ -141,11 +141,22 @@ export default function AllAcademicServices() {
       .map((x) => x.trim())
       .filter(Boolean);
 
-  const getImg = (s: Service) => {
-    if (!s.icon_url) return FALLBACK_IMG;
-    if (s.icon_url.startsWith("http")) return s.icon_url;
-    return `${BASE_URL}/files/services/${s.icon_url}`;
-  };
+const FALLBACK_IMG = "/images/blogImage.jpg";
+
+const getImg = (s: Service) => {
+  if (!s.icon_url) return FALLBACK_IMG;
+
+  // ✅ لو URL كامل
+  if (s.icon_url.startsWith("http")) return s.icon_url;
+
+  // ✅ لو رجع storage path فقط
+  const API_BASE_URL =
+    import.meta.env.VITE_API_BASE_URL || "https://api.transgateacd.com";
+
+  return `${API_BASE_URL}${s.icon_url.startsWith("/") ? "" : "/"}${s.icon_url}`;
+};
+
+
 
   const openWhatsApp = (serviceName: string) => {
     const message = isArabic
